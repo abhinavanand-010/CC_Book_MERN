@@ -35,7 +35,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     }
     async function senddata() {
       try {
-      const { data } = await axios.post('http://localhost:5000/api/checkout',{order:order})
+      const { data } = await axios.post('https://bookstoreserver.azurewebsites.net/api/checkout',{order:order})
       console.log(data);
       } catch(e) {
         console.log('Unable to store data')

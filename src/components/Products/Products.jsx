@@ -23,7 +23,7 @@ const Products = ({ products, onAddToCart, featureProducts }) => {
 
   const handleSearchClick = async () => {
       try{
-        const {data} = await axios.get(`http://localhost:5000/api/orders/${customerReference}`);
+        const {data} = await axios.get(`https://bookstoreserver.azurewebsites.net/api/orders/${customerReference}`);
         console.log(data.length)
       if(data.length>0) {
         setreservationInfo(data[0]);
@@ -36,7 +36,7 @@ const Products = ({ products, onAddToCart, featureProducts }) => {
 
   const handleDelete = async () => {
     try{
-      const res =await axios.post(`http://localhost:5000/api/orders/delete`,{customerReference:customerReference})
+      const res =await axios.post(`https://bookstoreserver.azurewebsites.net/api/orders/delete`,{customerReference:customerReference})
       console.log(res);
       setreservationInfo(null);
     } catch (error){
